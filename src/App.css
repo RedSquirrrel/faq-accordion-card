@@ -1,0 +1,137 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.card {
+  background: #fff;
+  /* margin: 10px; */
+  border-radius: 25px;
+  /* padding: 15px; */
+  /* margin-top: 20rem; */
+  position: relative;
+  /* height: 70vh; */
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin: 0 auto;
+  height: 650px;
+}
+
+.container {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 8rem;
+  /* height: 100%; */
+}
+
+.container::before {
+  content: url('./images/illustration-box-desktop.svg');
+  position: absolute;
+  width: 180px;
+  height: 170px;
+  left: -6rem;
+  bottom: 11rem;
+  z-index: 10;
+}
+
+.images {
+  background-image: url('./images/bg-pattern-desktop.svg'),
+    url('./images/illustration-woman-online-desktop.svg');
+
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 100%, 100%;
+  display: flex;
+  align-items: flex-start;
+  width: 50%;
+  position: relative;
+  right: 7rem;
+  top: -3rem;
+  margin: -4rem;
+}
+
+/* .image_1 {
+  background-image: url('./images/bg-pattern-desktop.svg');
+  z-index: 100;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 65%;
+  position: relative;
+  right: 15rem;
+  top: 1rem;
+  margin: -5rem;
+} */
+
+.accordion {
+  width: 40%;
+  padding-right: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+.title {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  position: relative;
+  left: 590px;
+  top: 50px;
+}
+
+.question {
+  font-size: 1.1rem;
+  color: hsl(237, 12%, 33%);
+  cursor: pointer;
+}
+
+.question:hover {
+  color: hsl(14, 88%, 65%);
+  /* cursor: pointer; */
+}
+
+.answer {
+  font-size: 0.9rem;
+  color: hsl(240, 6%, 50%);
+  line-height: 1.6;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.line {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: hsl(240, 5%, 91%);
+  z-index: 100;
+}
+
+.active + .content {
+  display: none;
+}
+
+.active:checked + .content {
+  display: block;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.arrow {
+  transform: rotate(-180deg);
+  transition: transform 0.1s ease-in-out;
+}
