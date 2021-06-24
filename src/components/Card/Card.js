@@ -30,12 +30,13 @@ const Card = ({ options, title }) => {
 
   return (
     <div className='card'>
-      <h1 className='title'>{title}</h1>
+      <div className='cube'></div>
       <div className='container'>
         <div className='images'></div>
-        {/* <div className='image_1'></div>
-        <div className='image_2'></div> */}
-        <div className='accordion'>{renderedOptions}</div>
+        <div className='accordion'>
+          <h1 className='title'>{title}</h1>
+          <div>{renderedOptions}</div>
+        </div>
       </div>
     </div>
   );

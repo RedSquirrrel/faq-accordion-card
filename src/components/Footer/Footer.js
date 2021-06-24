@@ -4,22 +4,23 @@ const Footer = () => {
   return (
     <div className='attribution'>
       {' '}
-      Challenge by
+      Challenge by{' '}
       <a
         href='https://www.frontendmentor.io?ref=challenge'
         rel='noopener noreferrer'
         target='_blank'
       >
-        Frontend Mentor
-      </a>
+        Frontend Mentor{' '}
+      </a>{' '}
       . Coded by
       <a
         href='https://github.com/RedSquirrrel/faq-accordion-card'
         rel='noopener noreferrer'
         target='_blank'
       >
-        Anette
-      </a>
+        {' '}
+        Anette{' '}
+      </a>{' '}
       .
     </div>
   );
