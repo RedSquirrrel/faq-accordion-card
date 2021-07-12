@@ -1,4 +1,5 @@
 import React from 'react';
+import CardContent from './components/CardContent/CardContent';
 import Card from './components/Card/Card';
 import Footer from './components/Footer/Footer';
 
@@ -39,7 +40,7 @@ const App = () => {
   return (
     <div>
       <div className='main'>
-        <div className='card'>
+        <Card>
           <div className='cube'></div>
           <div className='container'>
             <div className='images'></div>
@@ -47,11 +48,11 @@ const App = () => {
             <div className='accordion'>
               <h1 className='title'>FAQ</h1>
               {options.map(option => (
-                <Card key={option.id} options={option} />
+                <CardContent key={option.id} options={option} />
               ))}
             </div>
           </div>
-        </div>
+        </Card>
       </div>
       <Footer />
     </div>
