@@ -1,29 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import arrow from '../../images/icon-arrow-down.svg';
 import '../../App.css';
 
-const Card = ({ options, title }) => {
-  const [visible, setVisible] = useState(false);
+const Card = ({ options }) => {
+  const [open, setOpen] = useState(false);
+  const ref = useRef();
 
-  const hiddenWhenVisible = { display: visible ? '' : 'none' };
+  useEffect(() => {
+    const onBodyClick = event => {
+      if (ref.current.contains(event.target)) {
+        return;
+      }
+      setOpen(false);
+    };
+    document.body.addEventListener('click', onBodyClick, { capture: true });
 
-  const onTitleClick = () => {
-    console.log(visible);
-    setVisible(!visible);
-  };
+    return () => {
+      document.body.removeEventListener('click', onBodyClick, {
+        capture: true,
+      });
+    };
+  }, []);
 
   return (
-    <React.Fragment>
-      <div onClick={onTitleClick} className='flex hover'>
-        <p className={`question ${!options.id === visible ? '' : 'bold'}`}>{options.question}</p>
-        <img className={`${!options.id === visible ? '' : 'arrow'}`} src={arrow} alt='arrow' />
+    <div ref={ref}>
+      <div onClick={() => setOpen(!open)} className='flex hover'>
+        <p className={`question ${open ? 'bold' : ''}`}>{options.question}</p>
+        <img className={`${open ? '' : 'arrow'}`} src={arrow} alt='arrow' />
       </div>
-      <div style={hiddenWhenVisible}>
+      <div style={{ display: `${open ? '' : 'none'}` }}>
         <p className='answer'>{options.answer}</p>
       </div>
       <div className='line'></div>
-    </React.Fragment>
+    </div>
   );
 };
 

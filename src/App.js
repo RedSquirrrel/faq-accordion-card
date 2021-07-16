@@ -44,7 +44,6 @@ const App = () => {
           <div className='cube'></div>
           <div className='container'>
             <div className='images'></div>
-
             <div className='accordion'>
               <h1 className='title'>FAQ</h1>
               {options.map(option => (
@@ -53,6 +52,7 @@ const App = () => {
             </div>
           </div>
         </Card>
+        )
       </div>
       <Footer />
     </div>
